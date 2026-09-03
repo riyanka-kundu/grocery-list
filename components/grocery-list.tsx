@@ -32,7 +32,7 @@ const GroceryList = () => {
     }
 
     // Category filter
-    if (category) {
+    if (category && category !== "all") {
       items = items.filter((item) => item.category === category);
     }
 
