@@ -1,6 +1,5 @@
 "use client";
 
-import CartDialog from "@/components/cart-dialog";
 import FilterBar from "@/components/filter-bar";
 import GroceryItem from "@/components/grocery-item";
 import { GROCERY_DATA } from "@/data";
@@ -50,20 +49,17 @@ const GroceryList = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="mb-8 flex items-end justify-between gap-4">
-        <div>
-          <div className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wide uppercase text-primary">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Fresh everyday
-          </div>
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Grocery Cart
-          </h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Browse and shop fresh essentials
-          </p>
+      <div className="mb-8">
+        <div className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wide uppercase text-primary">
+          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+          Fresh everyday
         </div>
-        <CartDialog />
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          Browse & Shop
+        </h1>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Browse and shop fresh essentials
+        </p>
       </div>
 
       <FilterBar

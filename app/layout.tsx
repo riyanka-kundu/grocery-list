@@ -1,7 +1,9 @@
+import Navbar from "@/components/navbar";
 import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 
 import { CartProvider } from "@/components/providers/cart-provider";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Merriweather, Montserrat, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 
@@ -36,11 +38,19 @@ export default function RootLayout({
       lang="en"
       className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col scroll-smooth">
-        <CartProvider>
-          {children}
-          <Toaster />
-        </CartProvider>
+      <body className="flex flex-col scroll-smooth">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <CartProvider>
+            <Navbar />
+            {children}
+            <Toaster />
+          </CartProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

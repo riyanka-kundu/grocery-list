@@ -50,7 +50,7 @@ const ItemDetailsPage = async ({ params }: Props) => {
   }
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-primary/10 via-background to-background">
+    <div className="flex-1 bg-linear-to-b from-primary/10 via-background to-background">
       <div className="container mx-auto px-4 py-8">
         <Link
           href="/"
@@ -61,7 +61,7 @@ const ItemDetailsPage = async ({ params }: Props) => {
         </Link>
 
         <div className="grid gap-8 lg:grid-cols-2">
-          <div className="relative aspect-square overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm">
             <Image
               src={item.image}
               alt={item.name}
@@ -89,8 +89,11 @@ const ItemDetailsPage = async ({ params }: Props) => {
 
             <p className="mt-3 text-3xl font-extrabold tracking-tight text-primary">
               ₹{item.price}
+              <span className="text-base font-medium text-muted-foreground">
+                {" "}
+                / per unit
+              </span>
             </p>
-            <p className="mt-1 text-sm text-muted-foreground">Per unit</p>
 
             <p className="mt-6 max-w-prose leading-relaxed text-muted-foreground">
               {item.description}

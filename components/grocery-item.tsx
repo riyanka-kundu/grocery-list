@@ -95,8 +95,11 @@ const GroceryItem = ({ item }: GroceryItemProps) => {
 
         <p className="text-2xl font-bold tracking-tight text-primary">
           ₹{item.price}
+          <span className="text-sm font-medium text-muted-foreground">
+            {" "}
+            / per unit
+          </span>
         </p>
-        <p className="mt-0.5 text-xs text-muted-foreground">Per unit</p>
       </CardContent>
 
       <CardFooter className="pb-5 pt-3">
