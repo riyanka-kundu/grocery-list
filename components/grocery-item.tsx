@@ -2,17 +2,13 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { useCart } from "@/hooks/use-cart";
 import { cn } from "@/lib/utils";
 import { TGroceryItem } from "@/types";
+import { Minus, Plus, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Minus, Plus, ShoppingCart } from "lucide-react";
 import { toast } from "sonner";
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -63,10 +59,10 @@ const GroceryItem = ({ item }: GroceryItemProps) => {
   };
 
   return (
-    <Card className="group relative flex h-full flex-col overflow-hidden border border-border/60 bg-card pb-0 pt-0 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg">
+    <Card className="group relative flex h-full flex-col gap-3 overflow-hidden border border-border/60 bg-card pb-0 pt-0 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg">
       <Link
         href={`/items/${item.id}`}
-        className="relative block aspect-[4/3] overflow-hidden bg-muted"
+        className="relative block aspect-4/3 overflow-hidden bg-muted"
       >
         <Image
           src={item.image}
@@ -77,7 +73,7 @@ const GroceryItem = ({ item }: GroceryItemProps) => {
         />
       </Link>
 
-      <CardContent className="flex flex-1 flex-col pt-4">
+      <CardContent className="flex flex-1 flex-col gap-1.5">
         <div className="mb-2 flex items-start justify-between gap-2">
           <Link
             href={`/items/${item.id}`}
@@ -103,7 +99,7 @@ const GroceryItem = ({ item }: GroceryItemProps) => {
         <p className="mt-0.5 text-xs text-muted-foreground">Per unit</p>
       </CardContent>
 
-      <CardFooter className="pb-5 pt-2">
+      <CardFooter className="pb-5 pt-3">
         {cartItem ? (
           <div className="flex w-full items-center justify-between rounded-full border border-border/60 bg-muted/40 px-1 py-1">
             <Button
@@ -129,7 +125,11 @@ const GroceryItem = ({ item }: GroceryItemProps) => {
             </Button>
           </div>
         ) : (
-          <Button className="w-full gap-2 rounded-full" size="sm" onClick={handleAdd}>
+          <Button
+            className="w-full gap-2 rounded-full"
+            size="sm"
+            onClick={handleAdd}
+          >
             <ShoppingCart className="h-3.5 w-3.5" />
             Add to Cart
           </Button>

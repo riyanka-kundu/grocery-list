@@ -33,16 +33,19 @@ const CartDialog = () => {
 
   return (
     <Dialog>
-      <DialogTrigger>
-        <Button className="relative gap-2 rounded-full">
-          <ShoppingCart className="h-4 w-4" />
-          Cart
-          {totalItems > 0 && (
-            <span className="absolute -top-1.5 -right-1.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[0.6rem] font-bold text-primary-foreground">
-              {totalItems}
-            </span>
-          )}
-        </Button>
+      <DialogTrigger
+        render={
+          <Button className="relative gap-2 rounded-full">
+            <ShoppingCart className="h-4 w-4" />
+            Cart
+          </Button>
+        }
+      >
+        {totalItems > 0 && (
+          <span className="absolute -top-1.5 -right-1.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[0.6rem] font-bold text-primary-foreground">
+            {totalItems}
+          </span>
+        )}
       </DialogTrigger>
 
       <DialogContent className="max-w-lg gap-0 p-0">
@@ -65,7 +68,7 @@ const CartDialog = () => {
           </div>
         ) : (
           <div className="p-6">
-            <div className="max-h-[320px] space-y-3 overflow-y-auto pr-1">
+            <div className="max-h-80 space-y-3 overflow-y-auto pr-1">
               {cart.items.map((item) => (
                 <div
                   key={item.id}

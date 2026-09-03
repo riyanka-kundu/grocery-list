@@ -40,7 +40,7 @@ export const GROCERY_DATA = [
     name: "Cooking Oil",
     price: 160,
     category: "Essentials",
-    image: "/images/cooking-oil.svg",
+    image: "/images/cooking-oil.webp",
     description:
       "Refined sunflower cooking oil for deep frying, saut\u00e9ing, and healthy everyday cooking.",
   },
@@ -49,7 +49,7 @@ export const GROCERY_DATA = [
     name: "Mustard Oil",
     price: 180,
     category: "Essentials",
-    image: "/images/mustard-oil.svg",
+    image: "/images/mustard-oil.webp",
     description:
       "Cold-pressed mustard oil with a pungent aroma, great for pickles and North Indian cooking.",
   },
@@ -85,7 +85,7 @@ export const GROCERY_DATA = [
     name: "Cheese",
     price: 120,
     category: "Dairy",
-    image: "/images/cheese.svg",
+    image: "/images/cheese.webp",
     description:
       "Mild processed cheese blocks, ideal for sandwiches, pizzas, and melting into sauces.",
   },
@@ -94,7 +94,7 @@ export const GROCERY_DATA = [
     name: "Eggs (12 pcs)",
     price: 72,
     category: "Protein",
-    image: "/images/eggs.svg",
+    image: "/images/eggs.jpeg",
     description:
       "Farm-fresh white eggs, a versatile source of high-quality protein for any meal of the day.",
   },
@@ -103,7 +103,7 @@ export const GROCERY_DATA = [
     name: "Chicken Breast",
     price: 260,
     category: "Protein",
-    image: "/images/chicken-breast.svg",
+    image: "/images/chicken-breast.webp",
     description:
       "Skinless, boneless chicken breast, lean and tender. Perfect for grilling and curries.",
   },
@@ -112,7 +112,7 @@ export const GROCERY_DATA = [
     name: "Fish",
     price: 320,
     category: "Protein",
-    image: "/images/fish.svg",
+    image: "/images/fish.jpeg",
     description:
       "Fresh firm-fleshed fish, rich in omega-3. Great for frying, curries, and grilling.",
   },
@@ -121,7 +121,7 @@ export const GROCERY_DATA = [
     name: "Paneer",
     price: 90,
     category: "Protein",
-    image: "/images/paneer.svg",
+    image: "/images/paneer.webp",
     description:
       "Soft and fresh Indian cottage cheese, ideal for curries, tikka, and stuffed dishes.",
   },
@@ -130,7 +130,7 @@ export const GROCERY_DATA = [
     name: "Tofu",
     price: 85,
     category: "Protein",
-    image: "/images/tofu.svg",
+    image: "/images/tofu.webp",
     description:
       "Firm soybean tofu, a plant-based protein that absorbs flavors well for stir-fries and bowls.",
   },
@@ -139,7 +139,7 @@ export const GROCERY_DATA = [
     name: "Apple",
     price: 120,
     category: "Fruits",
-    image: "/images/apple.svg",
+    image: "/images/apple.jpg",
     description:
       "Crisp and juicy red apples, sweet with a hint of tartness. Great for snacking or salads.",
   },
@@ -157,7 +157,7 @@ export const GROCERY_DATA = [
     name: "Orange",
     price: 90,
     category: "Fruits",
-    image: "/images/orange.svg",
+    image: "/images/orange.jpeg",
     description:
       "Juicy and tangy oranges, packed with vitamin C. Perfect for fresh juice and snacking.",
   },
@@ -166,7 +166,7 @@ export const GROCERY_DATA = [
     name: "Mango",
     price: 150,
     category: "Fruits",
-    image: "/images/mango.svg",
+    image: "/images/mango.jpeg",
     description:
       "Sweet and aromatic ripe mangoes, a delicious seasonal treat loved by everyone.",
   },
@@ -175,7 +175,7 @@ export const GROCERY_DATA = [
     name: "Grapes",
     price: 110,
     category: "Fruits",
-    image: "/images/grapes.svg",
+    image: "/images/grapes.jpeg",
     description:
       "Plump green seedless grapes, crisp and refreshingly sweet. Great for snacking and desserts.",
   },
@@ -247,7 +247,7 @@ export const GROCERY_DATA = [
     name: "Green Peas",
     price: 80,
     category: "Vegetables",
-    image: "/images/green-peas.svg",
+    image: "/images/green-peas.jpeg",
     description:
       "Sweet and tender green peas, perfect for curries, pulao, and as a healthy side.",
   },
@@ -256,7 +256,7 @@ export const GROCERY_DATA = [
     name: "Capsicum",
     price: 70,
     category: "Vegetables",
-    image: "/images/capsicum.svg",
+    image: "/images/capsicum.jpg",
     description:
       "Crunchy green bell peppers with a mild flavor, ideal for stir-fries, salads, and pizzas.",
   },
@@ -301,7 +301,7 @@ export const GROCERY_DATA = [
     name: "Cake",
     price: 250,
     category: "Bakery",
-    image: "/images/cake.svg",
+    image: "/images/cake.webp",
     description:
       "Moist and fluffy layered cake, sweet and indulgent for celebrations and dessert.",
   },
@@ -310,7 +310,7 @@ export const GROCERY_DATA = [
     name: "Cookies",
     price: 80,
     category: "Bakery",
-    image: "/images/cookies.svg",
+    image: "/images/cookies.webp",
     description:
       "Crunchy butter cookies with a hint of vanilla, perfect with tea or coffee.",
   },
@@ -319,7 +319,7 @@ export const GROCERY_DATA = [
     name: "Tea",
     price: 180,
     category: "Beverages",
-    image: "/images/tea.svg",
+    image: "/images/tea.webp",
     description:
       "Strong, aromatic black tea leaves, ideal for a refreshing and energetic cuppa.",
   },
@@ -328,7 +328,7 @@ export const GROCERY_DATA = [
     name: "Coffee",
     price: 280,
     category: "Beverages",
-    image: "/images/coffee.svg",
+    image: "/images/coffee.webp",
     description:
       "Rich and bold coffee beans with a smooth roast, perfect for a daily caffeine boost.",
   },
@@ -337,7 +337,7 @@ export const GROCERY_DATA = [
     name: "Green Tea",
     price: 220,
     category: "Beverages",
-    image: "/images/green-tea.svg",
+    image: "/images/green-tea.webp",
     description:
       "Light and soothing green tea leaves, packed with antioxidants and a gentle flavor.",
   },
@@ -346,7 +346,7 @@ export const GROCERY_DATA = [
     name: "Orange Juice",
     price: 120,
     category: "Beverages",
-    image: "/images/orange-juice.svg",
+    image: "/images/orange-juice.jpeg",
     description:
       "100% fresh squeezed orange juice with no added sugar, zesty and refreshing.",
   },
@@ -382,7 +382,7 @@ export const GROCERY_DATA = [
     name: "Popcorn",
     price: 60,
     category: "Snacks",
-    image: "/images/popcorn.svg",
+    image: "/images/popcorn.webp",
     description:
       "Light and airy popcorn kernels, ready to pop into a delicious movie-night snack.",
   },
@@ -400,7 +400,7 @@ export const GROCERY_DATA = [
     name: "Pasta",
     price: 90,
     category: "Snacks",
-    image: "/images/pasta.svg",
+    image: "/images/pasta.webp",
     description:
       "Durum wheat pasta, versatile in shape and ideal for hearty Italian-style meals.",
   },
@@ -409,7 +409,7 @@ export const GROCERY_DATA = [
     name: "Black Pepper",
     price: 70,
     category: "Spices",
-    image: "/images/black-pepper.svg",
+    image: "/images/black-paper.webp",
     description:
       "Whole black peppercorns with a sharp, pungent kick. Grind fresh for maximum flavor.",
   },
@@ -427,7 +427,7 @@ export const GROCERY_DATA = [
     name: "Red Chilli Powder",
     price: 60,
     category: "Spices",
-    image: "/images/red-chilli-powder.svg",
+    image: "/images/red-chilli-powder.webp",
     description:
       "Fiery ground red chilli powder for adding heat and a deep red color to dishes.",
   },
@@ -445,7 +445,7 @@ export const GROCERY_DATA = [
     name: "Garam Masala",
     price: 95,
     category: "Spices",
-    image: "/images/garam-masala.svg",
+    image: "/images/garam-masala.webp",
     description:
       "A fragrant blend of warm spices, perfect for finishing curries and biryanis.",
   },
