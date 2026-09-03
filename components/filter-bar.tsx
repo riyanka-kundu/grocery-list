@@ -58,7 +58,7 @@ const FilterBar = ({
           value={sortOrder}
           onValueChange={(value) => setSortOrder(value as TSortOrder)}
         >
-          <SelectTrigger className="h-9 w-full rounded-lg border-border/60 bg-background lg:w-44">
+          <SelectTrigger className="h-9 w-full rounded-lg border-border/60 bg-background lg:w-44 p-3">
             <SelectValue placeholder="Sort by">
               {sortItems.find((item) => item.value === sortOrder)?.label}
             </SelectValue>
@@ -80,7 +80,7 @@ const FilterBar = ({
             setCategory(!value || value === "all" ? "" : value)
           }
         >
-          <SelectTrigger className="h-9 w-full rounded-lg border-border/60 bg-background lg:w-44">
+          <SelectTrigger className="h-9 w-full rounded-lg border-border/60 bg-background lg:w-44 p-3">
             <SelectValue placeholder="Category">
               {category
                 ? categories.find((item) => item.value === category)?.label

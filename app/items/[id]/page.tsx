@@ -1,25 +1,12 @@
-import { Badge } from "@/components/ui/badge";
 import AddToCart from "@/components/add-to-cart";
+import { Badge } from "@/components/ui/badge";
 import { GROCERY_DATA } from "@/data";
-import { cn } from "@/lib/utils";
+import { CATEGORY_COLORS, cn } from "@/lib/utils";
+import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
-
-const CATEGORY_COLORS: Record<string, string> = {
-  Grains: "bg-amber-100 text-amber-700",
-  Essentials: "bg-slate-200 text-slate-700",
-  Dairy: "bg-sky-100 text-sky-700",
-  Protein: "bg-rose-100 text-rose-700",
-  Fruits: "bg-orange-100 text-orange-700",
-  Vegetables: "bg-emerald-100 text-emerald-700",
-  Bakery: "bg-yellow-100 text-yellow-700",
-  Beverages: "bg-cyan-100 text-cyan-700",
-  Snacks: "bg-violet-100 text-violet-700",
-  Spices: "bg-red-100 text-red-700",
-};
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -61,14 +48,14 @@ const ItemDetailsPage = async ({ params }: Props) => {
         </Link>
 
         <div className="grid gap-8 lg:grid-cols-2">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm">
+          <div className="relative aspect-square overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm">
             <Image
               src={item.image}
               alt={item.name}
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+              className="object-cover object-top"
             />
           </div>
 

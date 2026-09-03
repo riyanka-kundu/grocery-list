@@ -4,25 +4,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { useCart } from "@/hooks/use-cart";
-import { cn } from "@/lib/utils";
+import { CATEGORY_COLORS, cn } from "@/lib/utils";
 import { TGroceryItem } from "@/types";
 import { Minus, Plus, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { toast } from "sonner";
-
-const CATEGORY_COLORS: Record<string, string> = {
-  Grains: "bg-amber-100 text-amber-700",
-  Essentials: "bg-slate-200 text-slate-700",
-  Dairy: "bg-sky-100 text-sky-700",
-  Protein: "bg-rose-100 text-rose-700",
-  Fruits: "bg-orange-100 text-orange-700",
-  Vegetables: "bg-emerald-100 text-emerald-700",
-  Bakery: "bg-yellow-100 text-yellow-700",
-  Beverages: "bg-cyan-100 text-cyan-700",
-  Snacks: "bg-violet-100 text-violet-700",
-  Spices: "bg-red-100 text-red-700",
-};
 
 type GroceryItemProps = {
   item: TGroceryItem;
@@ -69,7 +56,7 @@ const GroceryItem = ({ item }: GroceryItemProps) => {
           alt={item.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
         />
       </Link>
 
