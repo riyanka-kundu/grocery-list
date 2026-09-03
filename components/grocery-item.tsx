@@ -6,13 +6,27 @@ import {
   Card,
   CardContent,
   CardFooter,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import { useCart } from "@/hooks/use-cart";
+import { cn } from "@/lib/utils";
 import { TGroceryItem } from "@/types";
+import Image from "next/image";
+import Link from "next/link";
 import { Minus, Plus, ShoppingCart } from "lucide-react";
 import { toast } from "sonner";
+
+const CATEGORY_COLORS: Record<string, string> = {
+  Grains: "bg-amber-100 text-amber-700",
+  Essentials: "bg-slate-200 text-slate-700",
+  Dairy: "bg-sky-100 text-sky-700",
+  Protein: "bg-rose-100 text-rose-700",
+  Fruits: "bg-orange-100 text-orange-700",
+  Vegetables: "bg-emerald-100 text-emerald-700",
+  Bakery: "bg-yellow-100 text-yellow-700",
+  Beverages: "bg-cyan-100 text-cyan-700",
+  Snacks: "bg-violet-100 text-violet-700",
+  Spices: "bg-red-100 text-red-700",
+};
 
 type GroceryItemProps = {
   item: TGroceryItem;
@@ -49,51 +63,74 @@ const GroceryItem = ({ item }: GroceryItemProps) => {
   };
 
   return (
-    <Card className="group relative overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <CardHeader className="pb-3">
-        <div className="flex items-start justify-between gap-3">
-          <CardTitle className="text-lg font-semibold line-clamp-1">
-            {item.name}
-          </CardTitle>
+    <Card className="group relative flex h-full flex-col overflow-hidden border border-border/60 bg-card pb-0 pt-0 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg">
+      <Link
+        href={`/items/${item.id}`}
+        className="relative block aspect-[4/3] overflow-hidden bg-muted"
+      >
+        <Image
+          src={item.image}
+          alt={item.name}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      </Link>
 
-          <Badge variant="secondary" className="shrink-0">
+      <CardContent className="flex flex-1 flex-col pt-4">
+        <div className="mb-2 flex items-start justify-between gap-2">
+          <Link
+            href={`/items/${item.id}`}
+            className="text-base font-semibold tracking-wide uppercase line-clamp-1 transition-colors hover:text-primary"
+          >
+            {item.name}
+          </Link>
+
+          <Badge
+            variant="secondary"
+            className={cn(
+              "shrink-0 rounded-full px-2.5 py-0.5 text-[0.6rem]",
+              CATEGORY_COLORS[item.category],
+            )}
+          >
             {item.category}
           </Badge>
         </div>
-      </CardHeader>
 
-      <CardContent>
-        <p className="text-3xl font-bold tracking-tight text-primary">
+        <p className="text-2xl font-bold tracking-tight text-primary">
           ₹{item.price}
         </p>
-        <p className="mt-1 text-sm text-muted-foreground">Per unit</p>
+        <p className="mt-0.5 text-xs text-muted-foreground">Per unit</p>
       </CardContent>
 
-      <CardFooter>
+      <CardFooter className="pb-5 pt-2">
         {cartItem ? (
-          <div className="flex w-full items-center justify-between rounded-lg border bg-muted/30 p-2">
+          <div className="flex w-full items-center justify-between rounded-full border border-border/60 bg-muted/40 px-1 py-1">
             <Button
-              size="icon"
-              variant="outline"
+              size="icon-xs"
+              variant="ghost"
               onClick={() => handleQuantity(cartItem.quantity - 1)}
+              className="rounded-full"
             >
-              <Minus className="h-4 w-4" />
+              <Minus className="h-3.5 w-3.5" />
             </Button>
 
-            <span className="min-w-8 text-center text-lg font-semibold">
+            <span className="min-w-8 text-center text-sm font-semibold tabular-nums">
               {cartItem.quantity}
             </span>
 
             <Button
-              size="icon"
+              size="icon-xs"
+              variant="default"
               onClick={() => handleQuantity(cartItem.quantity + 1)}
+              className="rounded-full"
             >
-              <Plus className="h-4 w-4" />
+              <Plus className="h-3.5 w-3.5" />
             </Button>
           </div>
         ) : (
-          <Button className="w-full gap-2" onClick={handleAdd}>
-            <ShoppingCart className="h-4 w-4" />
+          <Button className="w-full gap-2 rounded-full" size="sm" onClick={handleAdd}>
+            <ShoppingCart className="h-3.5 w-3.5" />
             Add to Cart
           </Button>
         )}

@@ -39,8 +39,8 @@ const FilterBar = ({
   categories,
 }: FilterBarProps) => {
   return (
-    <div className="mb-8 rounded-xl p-4 shadow-sm">
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
+    <div className="mb-6 rounded-xl border border-border/50 bg-muted/30 p-4 backdrop-blur-sm">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
         {/* Search */}
         <div className="relative flex-1">
           <Search className="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
@@ -49,7 +49,7 @@ const FilterBar = ({
             placeholder="Search groceries..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="pl-10"
+            className="h-9 rounded-lg border-border/60 bg-background pl-10 text-sm"
           />
         </div>
 
@@ -58,7 +58,7 @@ const FilterBar = ({
           value={sortOrder}
           onValueChange={(value) => setSortOrder(value as TSortOrder)}
         >
-          <SelectTrigger className="w-full lg:w-52">
+          <SelectTrigger className="h-9 w-full rounded-lg border-border/60 bg-background lg:w-44">
             <SelectValue placeholder="Sort by">
               {sortItems.find((item) => item.value === sortOrder)?.label}
             </SelectValue>
@@ -80,7 +80,7 @@ const FilterBar = ({
             setCategory(!value || value === "all" ? "" : value)
           }
         >
-          <SelectTrigger className="w-full lg:w-52">
+          <SelectTrigger className="h-9 w-full rounded-lg border-border/60 bg-background lg:w-44">
             <SelectValue placeholder="Category">
               {category
                 ? categories.find((item) => item.value === category)?.label

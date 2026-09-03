@@ -1,12 +1,10 @@
-"use client";
-
 import { Action } from "@/components/providers/cart-provider";
 import { TCart, TGroceryItem } from "@/types";
-import { createContext, useContext } from "react";
+import { createContext, Dispatch, useContext } from "react";
 
 export const CartContext = createContext<{
   cart: TCart;
-  dispatch: React.Dispatch<Action>;
+  dispatch: Dispatch<Action>;
 } | null>(null);
 
 export const useCart = () => {

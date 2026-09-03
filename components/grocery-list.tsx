@@ -49,10 +49,23 @@ const GroceryList = () => {
   }, [search, category, sortOrder]);
 
   return (
-    <div className="container mx-auto px-4 py-6">
-      <div className="flex justify-end mb-5">
+    <div className="container mx-auto px-4 py-8">
+      <div className="mb-8 flex items-end justify-between gap-4">
+        <div>
+          <div className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wide uppercase text-primary">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+            Fresh everyday
+          </div>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Grocery Cart
+          </h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Browse and shop fresh essentials
+          </p>
+        </div>
         <CartDialog />
       </div>
+
       <FilterBar
         search={search}
         setSearch={setSearch}
@@ -63,7 +76,7 @@ const GroceryList = () => {
         categories={categoryItems}
       />
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {filteredItems.map((item) => (
           <GroceryItem key={item.id} item={item} />
         ))}
